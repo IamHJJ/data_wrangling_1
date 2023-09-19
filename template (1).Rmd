@@ -1,0 +1,90 @@
+---
+title: "Data_wrangling 1"
+output: github_document
+---
+
+```{r}
+library(tidyverse)
+```
+Let import the 'FAS_litters.csv' csv. using a relative path
+
+```{r}
+litters_df=
+  read_csv("data_import_examples/FAS_litters.csv")
+
+
+litters_df=
+  janitor::clean_names(litters_df)
+```
+
+import the same datset using an absolute path.
+
+```{r}
+litters_df=
+  read_csv("data_import_examples/FAS_litters.csv")
+
+
+litters_df=
+  janitor::clean_names(litters_df)
+```
+
+Importing "FAS_pups.csv"
+
+```{r}
+pups_df=
+  read_csv("data_import_examples/FAS_pups.csv")
+
+
+pups_df=
+  janitor::clean_names(pups_df)
+```
+
+## look at data
+```{r}
+litters_df
+
+head(litters_df)
+
+tail(littles_df)
+```
+
+You can use "view"
+
+```{r, eval=FALSE}
+view(litters_df)
+```
+
+Look at a data summary
+
+```{r}
+skimr::skim(litters_data)
+```
+
+##Options in "read_*"
+skip the first row of data 
+
+```{r}
+litters_df=
+   read_csv(
+     "data_import_examples/FAS_litters.csv",
+     skip = 1)
+```
+
+Look at NA value
+
+```{r}
+litters_df =
+  read_csv(
+  "data_import_examples/FAS_litters.csv",
+  na = c("NA",19))
+```
+  
+Column type 
+
+```{r}
+litters_df=
+  read_csv("data_import_examples/FAS_litters.csv",
+           )
+
+
+
